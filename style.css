@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid red;
+}
+
+.gridContainer {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: "header" "body";
+    gap: 20px;
+}
+
+.header {
+    grid-area: header;
+}
+
+.body {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.book {
+    height: 300px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.bookTop {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.title {
+    display: grid;
+    align-items: end;
+    justify-items: center;
+}
+
+.author {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.bookBottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
