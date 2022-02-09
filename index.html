@@ -8,56 +8,53 @@
     <title>Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100&family=Mochiy+Pop+P+One&family=Nunito:ital@1&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="gridContainer">
-        <div class="header">Header</div>
+        <div class="header">
+            <h1>Welcome to your library</h1>
+            <button id="myBtn" class="myButton">Add Book</button></div>
 
         <div class="body">
-
-            <!-- <div class="book">
-                <div class="bookTop">
-                    <h2 class="title">Title</h2>
-
-                    <p class="author"> Author </p>
-                </div>
-                <div class="bookBottom">
-                    <p class="NOP">Pages</p>
-                    <p class="status">Read</p>
-                </div>
-            </div>
-
-            <div class="book">
-                <div class="bookTop">
-                    <h2 class="title">Title</h2>
-
-                    <p class="author"> Author </p>
-                </div>
-                <div class="bookBottom">
-                    <p class="NOP">Pages</p>
-                    <p class="status">Read</p>
-                </div>
-            </div> -->
-
-
 
         </div>
     </div>
 
-    <div class="newBookForm">
-        <form action="index.html" method="post">
-            <label for="bookName">Name of the book:</label>
-            <input type="text" id="bookName" required>
-            <label for="bookAuthor">Name of the author:</label>
-            <input type="text" id="bookAuthor" required>
-            <label for="bookPages">Number of pages:</label>
-            <input type="text" id="bookPages" required>
-            <label for="bookStatus">Have you read the book:</label>
-            <input type="text" id="bookStatus" required>
-            <button type="button" id="addBook">Add book</button>
-        </form>
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+
+            <div class="newBookForm">
+                <span class="close">&times;</span>
+                <form action="" method="" class="bookForm">
+
+                    <label for="bookName">Name of the book:</label>
+                    <input type="text" id="bookName" required>
+                    <label for="bookAuthor">Name of the author:</label>
+                    <input type="text" id="bookAuthor" required>
+                    <label for="bookPages">Number of pages:</label>
+                    <input type="number" id="bookPages" required>
+                    <label for="bookStatus">Have you read the book:</label>
+                    <div class="radio">
+                        <input type="radio" id="bookStatus1" value="yes" name="radio" checked>yes
+                        <input type="radio" id="bookStatus2" value="no" name="radio">no
+                    </div>
+                    <button type="button" id="addBook" class="formButton">+</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 
 </body>
