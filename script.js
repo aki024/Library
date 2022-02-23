@@ -51,6 +51,8 @@ function Book(title, author, pages, readStatus) {
     }
 
 }
+
+//for when we remove stuff that its actually removed
 let removeBookButton;
 let booksDiv;
 let bookImages;
@@ -129,7 +131,7 @@ function showBook() {
         //Read or not
         const bookStatus = document.createElement('img');
         bookStatus.classList.add("status");
-        if (pedja === true) {
+        if (pedja === true) { //if book read status is true/false set correct image
             bookStatus.src = "clipart999036.png"
         } else { bookStatus.src = "866-8666493_edit-delete-not-encyclopedic-black-and-white-clip.png" }
 
@@ -144,8 +146,8 @@ function showBook() {
     changeImages()
     booksDiv = bookDivs;
 }
-let pedja;
-
+let pedja; //book status
+//Form iputs must have data
 function addBookToLibrary() {
     if (addBookAuthor.value != '' && addBookTitle.value != '' && addBookPages.value != '') {
 
@@ -172,19 +174,12 @@ function removeBook() {
 
 
 function removeOnClick(e) {
-
-
-
+    //remove data from arrays
     removeBookButton.splice(e.target, 1);
     myLibrary.splice(e.target, 1);
     booksDiv.splice(e.target, 1);
     bookImages.splice(e.target, 1);
     bookDisplay.removeChild(e.target.parentNode);
-    console.log(bookImages);
-    console.log('1');
-
-
-
 }
 
 function changeImages() {
@@ -195,8 +190,7 @@ function changeImages() {
         image.addEventListener('click', changeImageLol);
     })
     bookImages = imagesArray;
-    console.log(bookImages);
-    console.log('2');
+
 }
 
 function changeImageLol(e) {
@@ -204,10 +198,7 @@ function changeImageLol(e) {
     const imagesArray = Array.from(images);
     bookImages = imagesArray;
     let rez = bookImages.indexOf(e.target);
-    console.log(rez);
-
-
-
+    //onclick change status and image
     if (myLibrary[rez].readStatus == false) {
         myLibrary[rez].changeStatus();
         bookImages[rez].src = "clipart999036.png"
@@ -216,7 +207,5 @@ function changeImageLol(e) {
         bookImages[rez].src = "866-8666493_edit-delete-not-encyclopedic-black-and-white-clip.png"
     }
 
-    console.log(bookImages);
-    console.log('3');
 
 }
